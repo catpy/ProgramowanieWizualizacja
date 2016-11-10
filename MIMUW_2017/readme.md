@@ -98,7 +98,34 @@ W ramach tej fazy należy (zakładamy, że gra jeden gracz):
  - jedną funkcję o nazwie `badaj_gre` powtarzającą funkcje `gra` 10000 razy i wyznaczającą podstawowe statystyki opisowe rozgrywek (srednia, min, max, rozklad)
 2. Pakiet każdego zespołu powinien nazywać się `SuperFarmer______`, gdzie `______` to dowolne wybrane przez zespół słowo, słowa lub liczba (jeżeli słowo, to musi być cenzuralne i najlepiej bez polskich znaczków). Każdy zespół musi mieć pakiet o innej nazwie.
 3. Pakiet powinien być przygotowany zgodnie z regułami sztuki, funkcje i zbiory danych mają dokumentację, pakiet ma opis i zależności oraz unit testy. Funkcja test() i check() przechodzi bez błędów.
-4. Do pakietu dołączony jest skrypt knitr ilustrujący wykonanie pakeitu na wybranych strategiach.
+4. Do pakietu dołączony jest skrypt knitr ilustrujący wykonanie pakietu na wybranych strategiach.
+5. W pakiecie należy zaimplementować dobre strategie.
 
 ### Kryteria oceny fazy 2:
+
+W tej fazie również oceniane będą trzy kryteria:
+
+1. Jakość strategii.
+Wyżej punktowane będą rozwiązania, których strategie będą krócej grały. Jeżeli pakiet implementuje kilka strategii pod uwagę brana jest najlepsza z nich.
+
+2. Elastyczność pakietu
+Premiowane będą pakiety, których funkcja `strategia_` zadziała na funkcji `gra` z innego pakietu.
+Premiowane będą pakiety, których funkcja `gra` pozwoli na użycie funkcji `strategia_` z innego pakietu.
+
+Aby możliwa była taka współpraca pomiędzy pakietami, muszą Państwo sami uzgodnić pomiędzy sobą protokół komunikacji pomiędzy strategią a grą. To może być wektor, ramka, lista, cokolwiek.
+
+Aby pokazać z iloma innymi pakietami można wykorzystać Państwa strategię proszę przygotować skrypt knitra, w którym będą przykłady wczytania kolejnych pakietów oraz uruchomienia Państwa funkcji `strategia` i `gra` na funkcjach z innych pakietów.
+
+Najbardziej optymistyczny scenariusz jest taki, że wszystkie zespoły będą trzymały się uzgodnionego protokołu, przez co każda strategia zadziała na każdej grze i wszyscy dostaną max punktów za tę część.
+
+```
+SuperFarmerZieloneLudki::gra(SuperFarmerMysliciele::strategia_Tylko_NiePies)
+```
+Uzgodnienia protokołów nie biorą się same. Ktoś musi pierwszy coś zaproponować i to wystarczająco wcześnie.
+
+3. Inżynierska jakość kodu.
+Premiowane będą pakiety, których funkcje będą udokumentowane. 
+Których zbiory danych będą udokumentowane. 
+Który będzie posiadał odpowiednio dużo testów jednostkowych (testthat). 
+Który będzie wyposażony w ilustracje (vigniette) pokazującą jak korzystać z funkcji pakietu.
 
