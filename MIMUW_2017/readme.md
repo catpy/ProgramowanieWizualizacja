@@ -41,7 +41,7 @@ Symulacja i wizualizacja efektywności strategii w grze SuperFarmer.
 Instrukcja http://niewidzeprzeszkodzabrze.pl/wp-content/uploads/2016/02/SUPERFARMER.pdf
 Instrukcja oraz podstawowa analiza matematyczna: http://www.rost.com.pl/Gry/Farmer.htm
 
-Faza 1:
+## Faza 1:
 
 W ramach tej fazy należy (zakładamy, że gra jeden gracz):
 
@@ -53,7 +53,6 @@ W ramach tej fazy należy (zakładamy, że gra jeden gracz):
 6. Cały ww. kod, wraz z komentarzami dotyczącymi jego funkcjonowania, oraz wraz z przykładami wyników, należy umieścić w skrypcie knitrowym. Na zajęciach prezentowany będzie skompilowany do html'a skrypt knitrowy.
 
 Wynikiem pierwszej fazy jest opisana słownie oraz zaimplementowana strategia gry w SuperFarmera, wraz z wynikami symulacji długości gry jednego gracza stosującego ww. strategię.
-
 
 ### Kryteria oceny fazy 1:
 
@@ -85,6 +84,21 @@ Dobre rozwiązanie powinno:
 - wartości tam gdzie można powinny być czytelne (nazywane elementy wektorów),
 - kod powinien być czytelnie sformatowany, należy unikać długich cebulek,
 - unikać kopiowania podobnych bloków instrukcji, które można zastąpić pętlą.
-
  
+## Faza 2:
+
+Drugą fazę realizujemy w zespołach. Zespoły muszą być inne niż w fazie 1. Zespół może składać się z osób z różnych grup laboratoryjnych. 
+W ramach nowego zespołu można wykorzystać kod z pierwszej fazy każdego z członków zespołu.
+
+W ramach tej fazy należy (zakładamy, że gra jeden gracz):
+
+1. Przygotować pakiet zawierający funkcje:
+ - jedną lub więcej funkcji o nazwie zgodniej ze wzorcem `strategia_....`. W tych funkcjach powinna zostać zaimplementowana strategia gracza,
+ - jedną funkcję o nazwie `gra` implementującą jedną rozgrywkę dla zadanej (jako parametr) strategii. Wynikiem ten funkcji powinna być liczba tur prowadzących do zwycięstwa z zadaną strategią
+ - jedną funkcję o nazwie `badaj_gre` powtarzającą funkcje `gra` 10000 razy i wyznaczającą podstawowe statystyki opisowe rozgrywek (srednia, min, max, rozklad)
+2. Pakiet każdego zespołu powinien nazywać się `SuperFarmer______`, gdzie `______` to dowolne wybrane przez zespół słowo, słowa lub liczba (jeżeli słowo, to musi być cenzuralne i najlepiej bez polskich znaczków). Każdy zespół musi mieć pakiet o innej nazwie.
+3. Pakiet powinien być przygotowany zgodnie z regułami sztuki, funkcje i zbiory danych mają dokumentację, pakiet ma opis i zależności oraz unit testy. Funkcja test() i check() przechodzi bez błędów.
+4. Do pakietu dołączony jest skrypt knitr ilustrujący wykonanie pakeitu na wybranych strategiach.
+
+### Kryteria oceny fazy 2:
 
