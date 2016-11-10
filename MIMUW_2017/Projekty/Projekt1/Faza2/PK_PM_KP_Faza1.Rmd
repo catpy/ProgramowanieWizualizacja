@@ -33,7 +33,7 @@ Od 72 postêpujemy tak samo, z tym, ¿e w banku mamy ju¿ konia:
 4. Do wartoœci zagrody 105 trzymamy same króliki i 1 konia
 5. Dla wartoœci od 105 do 118: 1 koñ, ma³y pies i same króliki.
 6. Dla 119 do 127: 1 koñ, ma³y pies, reszta œwinie i owce.
-7. Dla wartoœci powy¿ej 127 robimy wymiany i koñczymy grê. Ponadto, je¿eli wartoœæ zagrody przekracza 144 to kupujemy drugiego konia, a w nastêpnej turze zakupimy brakuj¹ce zwierzêta.
+7. Dla wartoœci powy¿ej 127 robimy wymiany i koñczymy grê. Ponadto, je¿eli wartoœæ zagrody przekracza 144 to kupujemy drugiego konia (pod warunkiem, ¿e brakuje nam co najmniej 2 zwierz¹t), a w nastêpnej turze zakupimy brakuj¹ce zwierzêta.
 
 
 #3. Funkcje
@@ -61,7 +61,7 @@ zagroda <<-  rep(0, times = 7)
 ```
 
 ###Rzut koœæmi 
-
+ 
 ```{r} 
 rzut <- function() {
   wynik <<- c(sample(c(1, 1, 1, 1, 1, 1, 2, 2, 2, 3, 4, 9), 1), sample(c(1, 1, 1, 1, 1, 1, 2, 2, 3, 3, 5, 8), 1))
@@ -82,7 +82,7 @@ efekt_rzutu <- function() {
   
   if (wynik[wilk] == 1)
   {
-  for (i in 1:4) {
+  for (i in c(krolik, owca, swinia, krowa)) {
   stado[i] <<- stado[i] + zagroda[i]
   zagroda[i] <<- 0
   }
@@ -100,7 +100,7 @@ efekt_rzutu <- function() {
   }
   
   
-  for (j in 1:5)
+  for (j in c(krolik, owca, swinia, krowa, kon))
   {
   if (wynik[j] > 0) {
   stado[j] <<- stado[j] - min(trunc((zagroda[j] + wynik[j]) / 2), stado[j])
@@ -116,7 +116,7 @@ efekt_rzutu <- function() {
 wartosc_zagrody <- function(zagroda) {
   wartosc_w_krolikach <<- c(1, 6, 12, 36, 72, 6, 36)
   wartosc = rep(0, times = 7)
-  for (i in 1:7) {
+  for (i in c(krolik, owca, swinia, krowa, kon, maly_pies, duzy_pies)) {
   wartosc[i] <- zagroda[i] * wartosc_w_krolikach[i]
   }
   return(sum(wartosc))
@@ -127,7 +127,7 @@ wartosc_zagrody <- function(zagroda) {
 
 ```{r}
 warunek_koncowy <- function() {
-  for (i in 1:5) {
+  for (i in c(krolik, owca, swinia, krowa, kon)) {
   if (zagroda[i] == 0)
   return("Nie")
   }
@@ -160,12 +160,14 @@ sprzedaj_kilka_tanszych <- function(zwierze) {
   wektor_ograniczen <<- rep(0, times = 6)
   } else {
   wektor_ograniczen <<- c(1, 1, 1, 1, 1, 0)
+  #wektor_ograniczen daje ograniczenia na sprzedaz zwierzat, tak aby zachowac odpowiednia ich liczbe, postac tego wektora zosta³a dobrana pod nasza strategie
   }
   zagroda[zwierze] <<- zagroda[zwierze] + 1
   stado[zwierze] <<- stado[zwierze] - 1
   do_zaplaty <<- -wartosc_w_krolikach[zwierze]
   wektor_kosztu <<- c(1, 6, 12, 36, 0, 6)
-  for (i in c(3, 2, 6, 1)) {
+  #wektor_kosztu jest wyrazony w liczbie krolikow, np. krolik ma wartosc 1, owca 6 itd. 
+  for (i in c(swinia, owca, maly_pies, krolik)) {
   while (do_zaplaty < 0 && zagroda[i] > wektor_ograniczen[i] && wartosc_w_krolikach[zwierze] > wektor_kosztu[i]) {
   wymiana(i, zwierze, 1, 0)
   do_zaplaty <<- do_zaplaty + wektor_kosztu[i]
@@ -192,7 +194,7 @@ kup_kilka_tanszych  <- function(zwierze) {
   }
   zagroda[zwierze] <<- zagroda[zwierze] + 1
   stado[zwierze] <<- stado[zwierze] - 1
-  for (i in 1:3) {
+  for (i in c(krolik, owca, swinia)) {
   while (do_zaplaty < 0 && zagroda[i] == 0 && zagroda[zwierze] > 1 && wartosc_w_krolikach[zwierze] > wektor_kosztu[i]) {
   wymiana(zwierze, i, 0, wektor_kosztu_zwierze[i])
   do_zaplaty <<- do_zaplaty + wektor_kosztu_zwierze[i] * wektor_kosztu[i]
@@ -231,7 +233,7 @@ sprzedaj_drugiego_konia  <- function() {
   ilosc <<- c(6, 1, 1, 1)
   wektor_kosztu <<- c(6, 6, 12, 36)
   while (do_zaplaty < 0) {
-  for (i in c(4, 3, 2, 1)) {
+  for (i in c(krowa, swinia, owca, krolik)) {
   if (do_zaplaty < 0 &&
   stado[i] >= ilosc[i] && do_zaplaty + wektor_kosztu[i] <= 0) {
   wymiana(kon, i, 0, ilosc[i])
@@ -279,11 +281,9 @@ strategia <- function() {
       if (zagroda[maly_pies] == 0 && zagroda[krolik] > 6)
       {
       wymiana(krolik, maly_pies, 6, 1)
-      }
-      if (zagroda[swinia] < floor((zagroda[krolik] - 34) / 12)) {
+      } else if (zagroda[swinia] < floor((zagroda[krolik] - 34) / 12)) {
       wymiana(krolik, swinia, 12, 1)
-      }
-      if (zagroda[owca] < floor((zagroda[krolik] - 35) / 6)) {
+      } else if (zagroda[owca] < floor((zagroda[krolik] - 35) / 6)) {
       wymiana(krolik, owca, 6, 1)
       }
       }
@@ -380,8 +380,8 @@ gra <- function() {
   start_rozgrywki()
   czas <<- 0
   while (warunek_koncowy() != "Wygrana") {
-  strategia()
-  efekt_rzutu()
+  efekt_rzutu()  
+  strategia() 
   czas <<- czas + 1
   }
   return(czas)
