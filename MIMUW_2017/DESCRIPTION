@@ -1,0 +1,13 @@
+Package: PierwszyPakiet
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Authors@R: person("Marianna", "Dzik", email = "mariannadzik@wp.pl", role = c("aut", "cre"))
+Description: Super pakiet do funkcji z cwiczen.
+Depends:
+    R (>= 3.2.2)
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    dplyr
+RoxygenNote: 5.0.1
