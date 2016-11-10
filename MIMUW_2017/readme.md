@@ -105,16 +105,18 @@ W ramach tej fazy należy (zakładamy, że gra jeden gracz):
 
 W tej fazie również oceniane będą trzy kryteria:
 
-1. Jakość strategii.
+A. Jakość strategii.
+
 Wyżej punktowane będą rozwiązania, których strategie będą krócej grały. Jeżeli pakiet implementuje kilka strategii pod uwagę brana jest najlepsza z nich.
 
-2. Elastyczność pakietu
+B. Elastyczność pakietu.
+
 Premiowane będą pakiety, których funkcja `strategia_` zadziała na funkcji `gra` z innego pakietu.
 Premiowane będą pakiety, których funkcja `gra` pozwoli na użycie funkcji `strategia_` z innego pakietu.
 
 Aby możliwa była taka współpraca pomiędzy pakietami, muszą Państwo sami uzgodnić pomiędzy sobą protokół komunikacji pomiędzy strategią a grą. To może być wektor, ramka, lista, cokolwiek.
 
-Aby pokazać z iloma innymi pakietami można wykorzystać Państwa strategię proszę przygotować skrypt knitra, w którym będą przykłady wczytania kolejnych pakietów oraz uruchomienia Państwa funkcji `strategia` i `gra` na funkcjach z innych pakietów.
+Aby pokazać z iloma innymi pakietami można wykorzystać Państwa strategię proszę przygotować skrypt knitra (to może być ilustracja, patrz punkt C poniżej), w którym będą przykłady wczytania kolejnych pakietów oraz uruchomienia Państwa funkcji `strategia` i `gra` na funkcjach z innych pakietów.
 
 Najbardziej optymistyczny scenariusz jest taki, że wszystkie zespoły będą trzymały się uzgodnionego protokołu, przez co każda strategia zadziała na każdej grze i wszyscy dostaną max punktów za tę część.
 
@@ -123,9 +125,11 @@ SuperFarmerZieloneLudki::gra(SuperFarmerMysliciele::strategia_Tylko_NiePies)
 ```
 Uzgodnienia protokołów nie biorą się same. Ktoś musi pierwszy coś zaproponować i to wystarczająco wcześnie.
 
-3. Inżynierska jakość kodu.
+C. Inżynierska jakość kodu.
+
 Premiowane będą pakiety, których funkcje będą udokumentowane. 
 Których zbiory danych będą udokumentowane. 
 Który będzie posiadał odpowiednio dużo testów jednostkowych (testthat). 
 Który będzie wyposażony w ilustracje (vigniette) pokazującą jak korzystać z funkcji pakietu.
 
+Dodatkowo premiowane będa pakiety możliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
