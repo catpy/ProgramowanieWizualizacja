@@ -107,7 +107,7 @@ W tej fazie również oceniane będą trzy kryteria:
 
 A. Jakość strategii.
 
-Wyżej punktowane będą rozwiązania, których strategie będą krócej grały. Jeżeli pakiet implementuje kilka strategii pod uwagę brana jest najlepsza z nich.
+Wyżej punktowane będą rozwiązania, których strategie będą krócej grały. Jeżeli pakiet implementuje kilka strategii pod uwagę brana jest najlepsza z nich. Nie można mieć pakietu wyłącznie z podzbiorem strategii z innego pakietu, ale można mieć nadzbiór.
 
 B. Elastyczność pakietu.
 
