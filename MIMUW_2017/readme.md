@@ -121,10 +121,10 @@ Aby pokazać z iloma innymi pakietami można wykorzystać Państwa strategię pr
 Najbardziej optymistyczny scenariusz jest taki, że wszystkie zespoły będą trzymały się uzgodnionego protokołu, przez co każda strategia zadziała na każdej grze i wszyscy dostaną max punktów za tę część.
 
 ```
-SuperFarmerZieloneLudki::gra( SuperFarmerMysliciele::strategia_Tylko_NiePies )
+SuperFarmerZieloneLudki::gra( SuperFarmerMysliciele::strategia_Tylko_Nie_Pies )
 ## 45
 ```
-Uzgodnienia protokołów nie biorą się same. Ktoś musi pierwszy coś zaproponować i to wystarczająco wcześnie.
+Uzgodnienia protokołów nie tworzą się same z siebie. Ktoś musi pierwszy coś zaproponować i to wystarczająco wcześnie.
 
 C. Inżynierska jakość kodu.
 
