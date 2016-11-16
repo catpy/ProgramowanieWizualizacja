@@ -20,8 +20,8 @@ Plan spotkań MIM UW:
 * 27 X - [Projekt 1/1]; Funkcje ++, listy i przetwarzanie potokowe [Wykład](https://github.com/pbiecek/ProgramowanieWizualizacja/blob/master/MIMUW_2017/wyklad003.Rmd), [lub rozdział o funkcjach](http://biecek.pl/R)
 * 3 XI - Budowa pakietu [materiały](http://pbiecek.github.io/Przewodnik/Programowanie/pakiety/po_co.html)
 * 10 XI - [Projekt 1/2]; Unit testy 
-* 17 XI - Debugowanie
-* 24 XI - Profilowanie kodu
+* 17 XI - Profilowanie kodu [mterialy](http://pbiecek.github.io/Przewodnik/Programowanie/pazury/profilowanie.html)
+* 24 XI - Debugowanie
 * 1 XII - [Projekt 2/1]; Tidyverse
 * 8 XII - Shiny wprowadzenie
 * 15 XII - [Projekt 2/2]; Shiny ++
