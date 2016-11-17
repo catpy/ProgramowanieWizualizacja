@@ -2,6 +2,7 @@ Rozwiązanie:
 https://rawgit.com/pbiecek/ProgramowanieWizualizacja/master/MIMUW_2017/Projekty/Projekt1/Faza2/PK_PM_KP_Faza1.html
 
 Rozwiązanie jest dobre
+
 Dwa największe problemy tego kodu, za które ucinałem punkty to:
 - brak formatowania i bardzo długie funkcje (np. strategia)
 - korzystanie ze zmiennych globalnych
@@ -9,25 +10,30 @@ Dwa największe problemy tego kodu, za które ucinałem punkty to:
 Szczegółowe uwagi:
 
 A. Działanie
-	Skrypt kompiluje się bez problemu.
-	Spis treści przedstawia czytelnie strukturę
-	opisy są dosyć rozbudowane.
+
+* Skrypt kompiluje się bez problemu.
+* Spis treści przedstawia czytelnie strukturę
+* opisy są dosyć rozbudowane.
 
 B. Modułowość kodu
-    Kod składa się z funkcji, 
-    ale bardzo złym nawykiem jest przypisywanie wartości do zmiennych globalnych operatorem <<- 
-    Funkcje powinny być krótsze
+  
+* Kod składa się z funkcji, 
+* ale bardzo złym nawykiem jest przypisywanie wartości do zmiennych globalnych operatorem <<- 
+* Funkcje powinny być krótsze
 
 C. Elastyczność i czytelność rozwiązania
-	Najbardziej obniża czytelność brak formatowania.
+
+* Najbardziej obniża czytelność brak formatowania.
 
 
 Inne uwagi:
 
 Kod nie jest sformatowany, przez co się go trudno analizuje.
+
 Proszę zobaczyć poniżej.
 W RStudio opcje formatowania kodu można wyklikać z menu, warto to robić za każdym razem gdy kod nie ma wcięć.
 
+```
 kup_kilka_tanszych  <- function(zwierze) {
   wektor_kosztu <<- c(1, 6, 12, 36, 0, 6)
   do_zaplaty <<- -wartosc_w_krolikach[zwierze]
@@ -50,7 +56,9 @@ kup_kilka_tanszych  <- function(zwierze) {
   }
   }
   }
+```
 Różne funkcje mają różną liczbę wcięć, proszę zobaczyć poniższą
+```
 wymiana <- function(co_sprzedaj,
                     co_kup,
                     ile_sprzedaj,
@@ -61,8 +69,9 @@ wymiana <- function(co_sprzedaj,
                     stado[co_sprzedaj] <<- stado[co_sprzedaj] + ile_sprzedaj
                     return(zagroda)
                     }
-
+```
 
 Punkty:
+
 7/10
 
