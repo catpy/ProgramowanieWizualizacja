@@ -30,7 +30,8 @@ Inne uwagi:
 W funkcji rzuc_i_zareaguj
 zamiast robić zagnieżdzonego if'a 
 
-```if ('wilk' %in% kostki)
+```
+if ('wilk' %in% kostki)
     if ('lis' %in% kostki) 
 ```
 i później jeszcze jednego ifa, czytelniej by było rozpatrzeć najpierw atak wilka a później lisa, być może dwukrotnie wywołując funkcję 'atak_drapieznika'
