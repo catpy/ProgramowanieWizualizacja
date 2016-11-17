@@ -55,3 +55,6 @@ ACI EKA
 
 https://rawgit.com/pbiecek/ProgramowanieWizualizacja/master/MIMUW_2017/Projekty/Projekt1/Faza2/superfarmer_ostateczny.html
 
+ADY AKR DAM
+
+https://rawgit.com/pbiecek/ProgramowanieWizualizacja/master/MIMUW_2017/Projekty/Projekt1/Faza2/Projekt1-Amb%2CDym%2CKro%CC%81l.html
