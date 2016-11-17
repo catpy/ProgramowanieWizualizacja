@@ -37,7 +37,10 @@ Rok.produkcji %in% Lata)
 PoLatach <- group_by(SamochodyDanegoModelu,Marka,Model,Rok.produkcji)
 return(summarise(PoLatach, Srednia.Cena = mean(Cena.w.PLN)))
 }
-statystyki_ceny('Ford')
+statystyki_ceny('Kia')
+statystyki_ceny(MarkaWozu = 'Ford',ModelWozu = 'C-MAX')
+statystyki_ceny(ModelWozu = 'C-MAX')
+statystyki_ceny(ModelWozu = 'Carens',Lata=c(2003))$Srednia.Cena
 ```
 ```{r}
 utrata_ceny <- function(Marka){
