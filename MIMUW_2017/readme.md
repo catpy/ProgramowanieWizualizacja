@@ -21,7 +21,7 @@ Plan spotkań MIM UW:
 * 3 XI - Budowa pakietu [materiały](http://pbiecek.github.io/Przewodnik/Programowanie/pakiety/po_co.html)
 * 10 XI - [Projekt 1/2]; Unit testy 
 * 17 XI - Profilowanie kodu [materialy](http://pbiecek.github.io/Przewodnik/Programowanie/pazury/profilowanie.html)
-* 24 XI - Tidyverse
+* 24 XI - Tidyverse, [czytanie danych](http://pbiecek.github.io/Przewodnik/Programowanie/jak_wczytywac_korpusy_tekstu.html)
 * 1 XII - (konferencja w Będlewie, zajęcia będą odrobione w innym terminie)
 * 8 XII - [Projekt 2/1]; Shiny wprowadzenie
 * 15 XII - Shiny ++
