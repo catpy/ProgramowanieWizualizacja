@@ -133,4 +133,4 @@ Których zbiory danych będą udokumentowane.
 Który będzie posiadał odpowiednio dużo testów jednostkowych (testthat). 
 Który będzie wyposażony w ilustracje (vigniette) pokazującą jak korzystać z funkcji pakietu.
 
-Dodatkowo premiowane będa pakiety możliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
+Dodatkowo premiowane będa pakiety umożliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
