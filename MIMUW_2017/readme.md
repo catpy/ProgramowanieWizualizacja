@@ -23,7 +23,7 @@ Plan spotkań MIM UW:
 * 17 XI - Profilowanie kodu [materialy](http://pbiecek.github.io/Przewodnik/Programowanie/pazury/profilowanie.html)
 * 24 XI - Tidyverse, [czytanie danych](http://pbiecek.github.io/Przewodnik/Programowanie/jak_wczytywac_korpusy_tekstu.html), [shiny](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
 * 1 XII - (konferencja w Będlewie, zajęcia będą odrobione w innym terminie)
-* 8 XII - [Projekt 2/1]; Shiny ++
+* 8 XII - [Projekt 2/1]; [Shiny ++](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce3.html)
 * 15 XII - Grafika 101
 * 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2
 * 12 I - Rbokeh
