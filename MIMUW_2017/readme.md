@@ -24,8 +24,8 @@ Plan spotkań MIM UW:
 * 24 XI - Tidyverse, [czytanie danych](http://pbiecek.github.io/Przewodnik/Programowanie/jak_wczytywac_korpusy_tekstu.html), [shiny](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
 * 1 XII - (konferencja w Będlewie, zajęcia będą odrobione w innym terminie)
 * 8 XII - [Projekt 2/1]; [Shiny ++](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce3.html)
-* 15 XII - Grafika 101
-* 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2
+* 15 XII - Grafika 101, lab: dane `Przewodnik::maratony`
+* 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2, [ggplot2](http://pbiecek.github.io/Przewodnik/Wizualizacja/ggplot2/01_pierwszy_wykres.html)
 * 12 I - Rbokeh
 * 19 I - [Projekt 3/1]; googleVis
 * 26 I - [Projekt 3/2];
