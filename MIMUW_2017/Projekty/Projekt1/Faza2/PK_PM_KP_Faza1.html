@@ -167,7 +167,7 @@ $(document).ready(function () {
 <li>Do wartości zagrody 105 trzymamy same króliki i 1 konia</li>
 <li>Dla wartości od 105 do 118: 1 koń, mały pies i same króliki.</li>
 <li>Dla 119 do 127: 1 koń, mały pies, reszta świnie i owce.</li>
-<li>Dla wartości powyżej 127 robimy wymiany i kończymy grę. Ponadto, jeżeli wartość zagrody przekracza 144 to kupujemy drugiego konia, a w następnej turze zakupimy brakujące zwierzęta.</li>
+<li>Dla wartości powyżej 127 robimy wymiany i kończymy grę. Ponadto, jeżeli wartość zagrody przekracza 144 to kupujemy drugiego konia (pod warunkiem, że brakuje nam co najmniej 2 zwierząt), a w następnej turze zakupimy brakujące zwierzęta.</li>
 </ol>
 </div>
 <div id="funkcje" class="section level1">
@@ -209,7 +209,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   
   if (wynik[wilk] == 1)
   {
-  for (i in 1:4) {
+  for (i in c(krolik, owca, swinia, krowa)) {
   stado[i] &lt;&lt;- stado[i] + zagroda[i]
   zagroda[i] &lt;&lt;- 0
   }
@@ -227,7 +227,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   }
   
   
-  for (j in 1:5)
+  for (j in c(krolik, owca, swinia, krowa, kon))
   {
   if (wynik[j] &gt; 0) {
   stado[j] &lt;&lt;- stado[j] - min(trunc((zagroda[j] + wynik[j]) / 2), stado[j])
@@ -241,7 +241,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
 <pre class="r"><code>wartosc_zagrody &lt;- function(zagroda) {
   wartosc_w_krolikach &lt;&lt;- c(1, 6, 12, 36, 72, 6, 36)
   wartosc = rep(0, times = 7)
-  for (i in 1:7) {
+  for (i in c(krolik, owca, swinia, krowa, kon, maly_pies, duzy_pies)) {
   wartosc[i] &lt;- zagroda[i] * wartosc_w_krolikach[i]
   }
   return(sum(wartosc))
@@ -250,7 +250,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
 <div id="sprawdzenie-warunku-koncowego" class="section level3">
 <h3>Sprawdzenie warunku końcowego</h3>
 <pre class="r"><code>warunek_koncowy &lt;- function() {
-  for (i in 1:5) {
+  for (i in c(krolik, owca, swinia, krowa, kon)) {
   if (zagroda[i] == 0)
   return(&quot;Nie&quot;)
   }
@@ -280,12 +280,14 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   wektor_ograniczen &lt;&lt;- rep(0, times = 6)
   } else {
   wektor_ograniczen &lt;&lt;- c(1, 1, 1, 1, 1, 0)
+  #wektor_ograniczen daje ograniczenia na sprzedaz zwierzat, tak aby zachowac odpowiednia ich liczbe, postac tego wektora została dobrana pod nasza strategie
   }
   zagroda[zwierze] &lt;&lt;- zagroda[zwierze] + 1
   stado[zwierze] &lt;&lt;- stado[zwierze] - 1
   do_zaplaty &lt;&lt;- -wartosc_w_krolikach[zwierze]
   wektor_kosztu &lt;&lt;- c(1, 6, 12, 36, 0, 6)
-  for (i in c(3, 2, 6, 1)) {
+  #wektor_kosztu jest wyrazony w liczbie krolikow, np. krolik ma wartosc 1, owca 6 itd. 
+  for (i in c(swinia, owca, maly_pies, krolik)) {
   while (do_zaplaty &lt; 0 &amp;&amp; zagroda[i] &gt; wektor_ograniczen[i] &amp;&amp; wartosc_w_krolikach[zwierze] &gt; wektor_kosztu[i]) {
   wymiana(i, zwierze, 1, 0)
   do_zaplaty &lt;&lt;- do_zaplaty + wektor_kosztu[i]
@@ -310,7 +312,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   }
   zagroda[zwierze] &lt;&lt;- zagroda[zwierze] + 1
   stado[zwierze] &lt;&lt;- stado[zwierze] - 1
-  for (i in 1:3) {
+  for (i in c(krolik, owca, swinia)) {
   while (do_zaplaty &lt; 0 &amp;&amp; zagroda[i] == 0 &amp;&amp; zagroda[zwierze] &gt; 1 &amp;&amp; wartosc_w_krolikach[zwierze] &gt; wektor_kosztu[i]) {
   wymiana(zwierze, i, 0, wektor_kosztu_zwierze[i])
   do_zaplaty &lt;&lt;- do_zaplaty + wektor_kosztu_zwierze[i] * wektor_kosztu[i]
@@ -344,7 +346,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   ilosc &lt;&lt;- c(6, 1, 1, 1)
   wektor_kosztu &lt;&lt;- c(6, 6, 12, 36)
   while (do_zaplaty &lt; 0) {
-  for (i in c(4, 3, 2, 1)) {
+  for (i in c(krowa, swinia, owca, krolik)) {
   if (do_zaplaty &lt; 0 &amp;&amp;
   stado[i] &gt;= ilosc[i] &amp;&amp; do_zaplaty + wektor_kosztu[i] &lt;= 0) {
   wymiana(kon, i, 0, ilosc[i])
@@ -390,11 +392,9 @@ zagroda &lt;&lt;-  rep(0, times = 7)
       if (zagroda[maly_pies] == 0 &amp;&amp; zagroda[krolik] &gt; 6)
       {
       wymiana(krolik, maly_pies, 6, 1)
-      }
-      if (zagroda[swinia] &lt; floor((zagroda[krolik] - 34) / 12)) {
+      } else if (zagroda[swinia] &lt; floor((zagroda[krolik] - 34) / 12)) {
       wymiana(krolik, swinia, 12, 1)
-      }
-      if (zagroda[owca] &lt; floor((zagroda[krolik] - 35) / 6)) {
+      } else if (zagroda[owca] &lt; floor((zagroda[krolik] - 35) / 6)) {
       wymiana(krolik, owca, 6, 1)
       }
       }
@@ -491,8 +491,8 @@ zagroda &lt;&lt;-  rep(0, times = 7)
   start_rozgrywki()
   czas &lt;&lt;- 0
   while (warunek_koncowy() != &quot;Wygrana&quot;) {
-  strategia()
-  efekt_rzutu()
+  efekt_rzutu()  
+  strategia() 
   czas &lt;&lt;- czas + 1
   }
   return(czas)
@@ -503,7 +503,7 @@ zagroda &lt;&lt;-  rep(0, times = 7)
 <pre class="r"><code>czasy_gry &lt;- replicate(10000, gra())
 summary(czasy_gry)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-##    8.00   26.00   39.00   47.29   60.00  272.00</code></pre>
+##    7.00   25.00   38.00   45.91   58.00  287.00</code></pre>
 </div>
 </div>
 
