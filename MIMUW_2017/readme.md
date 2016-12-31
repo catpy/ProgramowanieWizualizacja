@@ -21,11 +21,11 @@ Plan spotkań MIM UW:
 * 3 XI - Budowa pakietu [materiały](http://pbiecek.github.io/Przewodnik/Programowanie/pakiety/po_co.html)
 * 10 XI - [Projekt 1/2]; Unit testy 
 * 17 XI - Profilowanie kodu [materialy](http://pbiecek.github.io/Przewodnik/Programowanie/pazury/profilowanie.html)
-* 24 XI - Tidyverse, [czytanie danych](http://pbiecek.github.io/Przewodnik/Programowanie/jak_wczytywac_korpusy_tekstu.html)
+* 24 XI - Tidyverse, [czytanie danych](http://pbiecek.github.io/Przewodnik/Programowanie/jak_wczytywac_korpusy_tekstu.html), [shiny](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce.html)
 * 1 XII - (konferencja w Będlewie, zajęcia będą odrobione w innym terminie)
-* 8 XII - [Projekt 2/1]; Shiny wprowadzenie
-* 15 XII - Shiny ++
-* 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2
+* 8 XII - [Projekt 2/1]; [Shiny ++](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce3.html)
+* 15 XII - Grafika 101, lab: dane `Przewodnik::maratony`
+* 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2, [ggplot2](http://pbiecek.github.io/Przewodnik/Wizualizacja/ggplot2/01_pierwszy_wykres.html)
 * 12 I - Rbokeh
 * 19 I - [Projekt 3/1]; googleVis
 * 26 I - [Projekt 3/2];
@@ -133,4 +133,4 @@ Których zbiory danych będą udokumentowane.
 Który będzie posiadał odpowiednio dużo testów jednostkowych (testthat). 
 Który będzie wyposażony w ilustracje (vigniette) pokazującą jak korzystać z funkcji pakietu.
 
-Dodatkowo premiowane będa pakiety możliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
+Dodatkowo premiowane będa pakiety umożliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
