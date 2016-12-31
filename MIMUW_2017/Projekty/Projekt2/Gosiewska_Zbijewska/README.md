@@ -8,7 +8,7 @@
 
 * Do zbadania jakości strategii służy funkcja `badaj_gre`
 
-* W naszym pakiezie zaimplementowane są następujące strategie:
+* W naszym pakiecie zaimplementowane są następujące strategie:
 
 	- `strategia_AGOJZB`
 
@@ -16,7 +16,7 @@
 
 	- `strategia_oszukancza`
 
-* pakiet zawiera równiez dwie vignettes:
+* pakiet zawiera równiez dwie ilustracje (vigniette):
 
 	- SuperFarmerAGOJZB_opis_dzialania
 
