@@ -1,9 +1,6 @@
 Programowanie w R i wizualizacja danych
 ---------------------------------------
 
-Ankieta na start
-https://goo.gl/forms/Dlz9HaV9DqrWLcds1
-
 Materialy na start
 Pogromcy Danych: http://pogromcydanych.icm.edu.pl
 
@@ -40,6 +37,8 @@ Symulacja i wizualizacja efektywności strategii w grze SuperFarmer.
 
 Instrukcja http://niewidzeprzeszkodzabrze.pl/wp-content/uploads/2016/02/SUPERFARMER.pdf
 Instrukcja oraz podstawowa analiza matematyczna: http://www.rost.com.pl/Gry/Farmer.htm
+
+[Aktualna punktacja](https://docs.google.com/spreadsheets/d/1OQRyr_jIY1CA-3YDpB2l8CHLse-dk38UcxqDI1F-DBk/edit?usp=sharing)
 
 ## Faza 1:
 
