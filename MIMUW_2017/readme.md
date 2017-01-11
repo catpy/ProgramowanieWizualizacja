@@ -147,6 +147,8 @@ Jako rozwiązanie należy:
 - do jednego z pakietów dodać funkcję wizytowka_aaa(strategia), gdzie ‘aaa’ to nazwa nowego zespołu. W jednym pakiecie może być kilka takich funkcji, ważne by każdy zespół dodał przynajmniej jedną funkcję do któregoś pakietu.
 - na moje repozytorium należy przesłać wizytówki dla przynajmniej dwóch strategii. Pliki z wizytówką proszę zapisać w formacie pdf w pliku o nazwie aaa_wizytowka_bbb.pdf gdzie 'aaa' to nazwa zespołu a 'bbb' to nazwa strategii. Proszę też oczywiście wysłać informację w którym pakiecie jest ta nowa wizytówka.
 
+Ogólne uwagi co wizytówka powinna zawierać
+
 * Wizytówka powinna być czytelna samoistnie, wszystkie niezbędne wyjaśnienia powinny być na niej. 
 * Wizytówka powinna zawierać informację o tym jaka strategia jest przedstawiana i kto wizytówkę wykonał.
 * Wizytówka może składać się z jednego lub większej liczby wykresów.
