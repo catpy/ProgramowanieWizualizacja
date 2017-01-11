@@ -23,7 +23,7 @@ Plan spotkań MIM UW:
 * 8 XII - [Projekt 2/1]; [Shiny ++](http://pbiecek.github.io/Przewodnik/Programowanie/jak_tworzyc_aplikajce3.html)
 * 15 XII - Grafika 101, lab: dane `Przewodnik::maratony`
 * 22 XII - [Projekt 2/2]; Gramatyka grafiki i ggplot2, [ggplot2](http://pbiecek.github.io/Przewodnik/Wizualizacja/ggplot2/01_pierwszy_wykres.html)
-* 12 I - Rbokeh
+* 12 I - Rbokeh, [ZwyczajeTramwaje](https://www.dropbox.com/s/1egykiaefhmz5v4/wybraneKolumny.rda?dl=0), [ggmap](http://stat405.had.co.nz/ggmap.pdf), [Linie](https://www.dropbox.com/s/oqrduyarze5z4v8/linie.zip?dl=0)
 * 19 I - [Projekt 3/1]; googleVis
 * 26 I - [Projekt 3/2];
 
