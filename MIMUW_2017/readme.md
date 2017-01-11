@@ -160,19 +160,19 @@ W tej fazie również oceniane będą trzy kryteria:
 
 A. Jak wiele możemy się o danej strategii dowiedzieć z wizytówki
 
-Wizytówki pokazujące jedynie proste statystyki (tylko mediana, tylko min/max) będą oceniane niżej,
-wizytówki pokazujące wiele ciekawych informacji będą oceniane wyżej (decyle, rozkład).
+- Wizytówki pokazujące jedynie proste statystyki (tylko mediana, tylko min/max) będą oceniane niżej,
+- Wizytówki pokazujące wiele ciekawych informacji będą oceniane wyżej (decyle, rozkład).
 
 B. Czy możemy porównać różne strategie
 
-Najlepsze prezentacje danych mają wspólny punkt odniesienia, dzięki czemu można porównać otrzymane wyniki.
-Wyżej oceniane będą wizytówki, które można ze sobą porównać. 
-Aby to było możliwe wykresy powinny mieć takie same/podobne skale na osiach.
-Najlepiej by czas działania strategii był odniesiony do jednego uniwersalnego rozwiązania (np. względem najlepszej lub względem najbardziej naiwnej strategii). Jeżeli każda wizytówka pokazuje o ile analizowana strategia jest lepsza / gorsza niż strategia ABC, wtedy można łatwo porównać wizytówki.
-Jeżeli zestawiamy obok siebie obie wizytówki i nie możemy na ich podstawie porównać strategii, to źle.
+- Najlepsze prezentacje danych mają wspólny punkt odniesienia, dzięki czemu można porównać otrzymane wyniki.
+- Wyżej oceniane będą wizytówki, które można ze sobą porównać. 
+- Aby to było możliwe wykresy powinny mieć takie same/podobne skale na osiach.
+- Najlepiej by czas działania strategii był odniesiony do jednego uniwersalnego rozwiązania (np. względem najlepszej lub względem najbardziej naiwnej strategii). Jeżeli każda wizytówka pokazuje o ile analizowana strategia jest lepsza / gorsza niż strategia ABC, wtedy można łatwo porównać wizytówki.
+- Jeżeli zestawiamy obok siebie obie wizytówki i nie możemy na ich podstawie porównać strategii, to źle.
 
 C. Estetyka
 
-To kryterium najtrudniej sformalizować, ale bardziej estetyczne, lepiej wyglądające wizytówki oceniane będą wyżej.
-Elementem estetyki jest czytelność. Aby wizytówka była czytelna wszystkie elementy muszą być wystarczająca duże by móc je przeczytać.
+- To kryterium najtrudniej sformalizować, ale bardziej estetyczne, lepiej wyglądające wizytówki oceniane będą wyżej.
+- Elementem estetyki jest czytelność. Aby wizytówka była czytelna wszystkie elementy muszą być wystarczająca duże by móc je przeczytać.
 
