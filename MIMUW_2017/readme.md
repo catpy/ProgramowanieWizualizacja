@@ -133,3 +133,44 @@ Który będzie posiadał odpowiednio dużo testów jednostkowych (testthat).
 Który będzie wyposażony w ilustracje (vigniette) pokazującą jak korzystać z funkcji pakietu.
 
 Dodatkowo premiowane będa pakiety umożliwiające parametryzowanie rozgrywek (czy wilk zjada małęgo psa, czy lis pozostawia jednego królika, czy można wymieniać w jednej rundzie wiele zwierząt na wiele).
+
+## Faza 3:
+
+Trzecią fazę realizujemy w zespołach, innych niż w poprzednich fazach. Zespół może składać się z osób z różnych grup laboratoryjnych. W ramach nowego zespołu można wykorzystać dowolny kod zgłoszony w fazie 2.
+
+Celem jest przygotowanie funkcji - wizytówki, dla strategii.
+Wizytówka fizycznie jest jednym, jednostronicowym plikiem pdf (najlepiej formatu A4 lub A3, ale nie jest to sztywne wymaganie).
+Wizytówka powinna być generowana automatycznie dla wybranej strategii.
+
+Jako rozwiązanie należy:
+
+- do jednego z pakietów dodać funkcję wizytowka_aaa(strategia), gdzie ‘aaa’ to nazwa nowego zespołu. W jednym pakiecie może być kilka takich funkcji, ważne by każdy zespół dodał przynajmniej jedną funkcję do któregoś pakietu.
+- na moje repozytorium należy przesłać wizytówki dla przynajmniej dwóch strategii. Pliki z wizytówką proszę zapisać w formacie pdf w pliku o nazwie aaa_wizytowka_bbb.pdf gdzie 'aaa' to nazwa zespołu a 'bbb' to nazwa strategii. Proszę też oczywiście wysłać informację w którym pakiecie jest ta nowa wizytówka.
+
+* Wizytówka powinna być czytelna samoistnie, wszystkie niezbędne wyjaśnienia powinny być na niej. 
+* Wizytówka powinna zawierać informację o tym jaka strategia jest przedstawiana i kto wizytówkę wykonał.
+* Wizytówka może składać się z jednego lub większej liczby wykresów.
+* Wizytówka powinna być generowana całkowicie automatycznie, bez konieczności edycji pliku pdf w jakimś innym zewnętrznym programie.
+
+### Kryteria oceny fazy 3:
+
+W tej fazie również oceniane będą trzy kryteria:
+
+A. Jak wiele możemy się o danej strategii dowiedzieć z wizytówki
+
+Wizytówki pokazujące jedynie proste statystyki (tylko mediana, tylko min/max) będą oceniane niżej,
+wizytówki pokazujące wiele ciekawych informacji będą oceniane wyżej (decyle, rozkład).
+
+B. Czy możemy porównać różne strategie
+
+Najlepsze prezentacje danych mają wspólny punkt odniesienia, dzięki czemu można porównać otrzymane wyniki.
+Wyżej oceniane będą wizytówki, które można ze sobą porównać. 
+Aby to było możliwe wykresy powinny mieć takie same/podobne skale na osiach.
+Najlepiej by czas działania strategii był odniesiony do jednego uniwersalnego rozwiązania (np. względem najlepszej lub względem najbardziej naiwnej strategii). Jeżeli każda wizytówka pokazuje o ile analizowana strategia jest lepsza / gorsza niż strategia ABC, wtedy można łatwo porównać wizytówki.
+Jeżeli zestawiamy obok siebie obie wizytówki i nie możemy na ich podstawie porównać strategii, to źle.
+
+C. Estetyka
+
+To kryterium najtrudniej sformalizować, ale bardziej estetyczne, lepiej wyglądające wizytówki oceniane będą wyżej.
+Elementem estetyki jest czytelność. Aby wizytówka była czytelna wszystkie elementy muszą być wystarczająca duże by móc je przeczytać.
+
