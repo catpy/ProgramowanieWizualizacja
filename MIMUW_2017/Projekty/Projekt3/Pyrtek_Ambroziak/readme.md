@@ -1,4 +1,4 @@
-Funkcja do tworzenia wizytowek znajduje si? w pakiecie "SuperFarmerDA". 
+Funkcja do tworzenia wizytowek znajduje sie w pakiecie "SuperFarmerDA". 
 
 https://github.com/ambroziakd/KursRprojekt2/tree/master/SuperFarmerDA
 
