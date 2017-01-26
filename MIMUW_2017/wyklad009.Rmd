@@ -1,0 +1,61 @@
+---
+title: "GGplot2"
+output: html_notebook
+---
+
+Dzisiejsze zajęcia oparte są o materiały ze strony
+
+http://pbiecek.github.io/Przewodnik/Wizualizacja/jak_tworzyc_wykresy_ggplot2.html
+
+```{r}
+library(SmarterPoland)
+head(countries)
+
+pl <- ggplot(countries, aes(x=birth.rate, y=death.rate)) + 
+  geom_point() +
+  geom_smooth()
+class(pl)
+str(pl)
+
+
+ggplot(countries, aes(x=birth.rate, y=death.rate, color=continent, shape=continent)) +
+  geom_point()
+
+ggplot() +
+  geom_point(data=countries, aes(x=birth.rate, y=death.rate, color=population, size=population))+
+  geom_smooth(data=countries, aes(x=birth.rate, y=death.rate, color=population, size=population))
+
+ggplot(data=countries, aes(x=birth.rate, y=death.rate)) +
+  geom_point(aes(color=population, size=population))+
+  geom_smooth()
+
+ggplot(data=countries, aes(x=birth.rate, y=death.rate)) +
+  geom_point(aes(color="blue"))
+ggplot(data=countries, aes(x=birth.rate, y=death.rate)) +
+  geom_point(color="blue")
+
+ggplot(countries, aes(x = continent, y = birth.rate,fill=continent)) +
+  geom_violin()
+
+
+
+ggplot(na.omit(countries), aes(x = birth.rate, y = death.rate)) +
+  stat_ellipse(color="red4")+
+  geom_point(size=2, color="red") + 
+  facet_wrap(~continent)
+
+ggplot(na.omit(countries), aes(x = birth.rate, y = death.rate)) +
+  stat_ellipse(color="red4")+
+  geom_point(data=countries[,-5],size=1,color="grey") +
+  geom_point(size=2, color="red") + 
+  facet_wrap(~continent)
+
+
+ggplot(data=countries, aes(x=birth.rate, y=death.rate)) +
+  geom_point(aes(color=continent, size=population))+
+  geom_smooth() + 
+  scale_color_manual(values=c("red3","red2","red1","red4","grey"), name="Ala") +
+  scale_size_continuous(range = c(0,10), limits = c(0,1000000))
+
+```
+
