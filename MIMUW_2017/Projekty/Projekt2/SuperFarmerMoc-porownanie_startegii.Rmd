@@ -1,0 +1,168 @@
+---
+title: SuperFarmer
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+---
+Marianna Dzik & Jan Dmitruk
+
+29.12.2016r.
+
+#Porównanie strategii
+Potrzebne biblioteki:
+
+* `library(SuperFarmerMoc)`,
+
+* `library(SuperFarmerDA)`, (`devtools::install_github("ambroziakd/KursRprojekt2/tree/master/SuperFarmerDA")`),
+* `library(SuperFarmerRCNK)`, (`devtools::install_github("rcylwa/SuperFarmerRCNK")`),
+
+* `library(SuperFarmerADiPR)`, (`devtools::install_github("PiotrRadzinski/SuperFarmerADiPR")`),
+
+* `library(SuperFarmer.SuperPakiet)`,
+
+* `library(SuperFarmerAGOJZB)`,
+
+* `library(SuperFarmer.SuperDziewczyn)`.
+
+Korzystając z naszego nośnika gry uruchomię funkcję `badaj_gre()` dla strategii z różnych pakietów.
+
+###SuperFaramerMoc
+Zacznę od startegii z naszego pakietu.
+```{r}
+n = 1000
+Moc_Jana <- SuperFarmerMoc::badaj_gre(SuperFarmerMoc::strategia_Jana, ilosc_prob =  n)
+Moc_postMDiPR <- SuperFarmerMoc::badaj_gre(SuperFarmerMoc::strategia_postMDiPR, ilosc_prob =  n)
+Moc_wiele <- SuperFarmerMoc::badaj_gre(SuperFarmerMoc::strategia_wiele_na_wiele_MD, ilosc_prob =  n)
+#strategia_Jana
+summary(Moc_Jana)
+#strategia-postMDiPR
+summary(Moc_postMDiPR)
+#strategia_wiele_na_wiele
+summary(Moc_wiele)
+```
+
+###SuperFarmerDA
+```{r}
+#DA_maxrabitt <- SuperFarmerMoc::badaj_gre(SuperFarmerDA::strategy_maxrabbit, ilosc_prob =  n)
+#DA_PDMS <- SuperFarmerMoc::badaj_gre(SuperFarmerDA::strategy_PDMS, ilosc_prob =  n)
+#strategy_maxrabbit
+#summary(DA_maxrabitt)
+#strategy_PDMS
+#summary(DA_PDMS)
+```
+
+###SuperFramerRCNK
+```{r}
+RCNK_nk <- SuperFarmerMoc::badaj_gre(SuperFarmerRCNK::strategia_nk, ilosc_prob =  n)
+RCNK_yolo <- SuperFarmerMoc::badaj_gre(SuperFarmerRCNK::strategia_yolo, ilosc_prob =  n)
+RCNK_anty <- SuperFarmerMoc::badaj_gre(SuperFarmerRCNK::strategia_anty_yolo, ilosc_prob =  n)
+#strategia_nk
+summary(RCNK_nk)
+#strategia_yolo
+summary(RCNK_yolo)
+#strategia_anty_yolo
+summary(RCNK_anty)
+```
+
+###SuperFarmer.SuperPakiet
+```{r}
+SuperPakiet_1 <- SuperFarmerMoc::badaj_gre(SuperFarmer.SuperPakiet::strategia_1_na_wiele, ilosc_prob =  n)
+SuperPakiet_wiele <- SuperFarmerMoc::badaj_gre(SuperFarmer.SuperPakiet::strategia_wiele_na_wiele, ilosc_prob =  n)
+#strategia_1_na_wiele
+summary(SuperPakiet_1)
+#strategia_wiele_na_wiele
+summary(SuperPakiet_wiele)
+```
+
+###SuperFarmerADiPR
+```{r}
+#strategia_ADA
+ADiPR_ADA <- SuperFarmerMoc::badaj_gre(SuperFarmerADiPR::strategia_ADA, ilosc_prob =  n)
+summary(ADiPR_ADA)
+```
+
+###SuperFarmerAGOJZB
+```{r}
+#strategia_AGOJZB
+AGOJZB_AGOJZB <- SuperFarmerMoc::badaj_gre(SuperFarmerAGOJZB::strategia_AGOJZB, ilosc_prob =  n)
+summary(AGOJZB_AGOJZB)
+#strategia_AGOJZB_kroliki
+AGOJZB_kroliki <- SuperFarmerMoc::badaj_gre(SuperFarmerAGOJZB::strategia_AGOJZB_kroliki, ilosc_prob =  n)
+summary(AGOJZB_kroliki)
+```
+
+###SuperFarmer.SuperDziewczyn
+```{r}
+#strategia_wymian_0_0_0_0
+SuperDziewczyn_0_0_0_0 <- SuperFarmerMoc::badaj_gre(SuperFarmer.SuperDziewczyn::strategia_wymian_0_0_0_0, ilosc_prob =  n)
+summary(SuperDziewczyn_0_0_0_0)
+#strategia_wymian_1_1_1_1
+SuperDziewczyn_1_1_1_1 <- SuperFarmerMoc::badaj_gre(SuperFarmer.SuperDziewczyn::strategia_wymian_1_1_1_1, ilosc_prob =  n)
+summary(SuperDziewczyn_1_1_1_1)
+```
+
+##Wizualizacja
+
+###Najlepsze startegie
+Poniżej znajduje się porównanie strategii, które okazały się najszybsze. Z naszego pakietu pochodzi strateia_postMDiPR nazwana na wykresie: Moc_postMDiPR.
+```{r}
+#boxplot(Moc_postMDiPR, DA_maxrabitt, RCNK_nk,ADiPR_ADA, names #=c("Moc_postMDiPR", "DA_maxrabitt", "RCNK_nk", "ADiPR_ADA"))
+boxplot(Moc_postMDiPR, RCNK_nk,ADiPR_ADA, names =c("Moc_postMDiPR", "RCNK_nk", "ADiPR_ADA"))
+```
+
+###Najgorsze startegie
+Poniżej znajduje się porównanie strategii, które miały największy średni czas trwania gry.
+```{r}
+boxplot( RCNK_yolo, RCNK_anty,AGOJZB_kroliki, names =c("RCNK_yolo", "RCNK_anty", "AGOJZB_kroliki"))
+```
+
+###Zmienione zasady
+W dwoch strategiach dopuszcza się wymiane zwierząt wielu gatunków na wiele gatunkóW zwierząt. Jedna z tych strategii pochodzi z naszego pakietu - SuperFarmerMoc, druga z pakietu SuperFarmer.SuperPakiet. Poniżej znajdują się wykres porównujący nasze startegie. Nasza strategia ma  ok. 5 tur krótszy średni czas trwania gry.
+```{r}
+boxplot(Moc_wiele, SuperPakiet_wiele, names =c("SuperFarmerMoc", "SuperFarmer.SuperPakiet"))
+```
+
+###Porównanie naszych strategii
+```{r}
+#strategia_Jana
+plot(density(Moc_Jana,bw=2))
+#stretegia_postMDiPR
+plot(density(Moc_postMDiPR,bw=2))
+#strategia_Jana
+plot(ecdf(Moc_Jana))
+#stretegia_postMDiPR
+plot(ecdf(Moc_postMDiPR))
+```
+
+#Działanie naszych starategii na innych nośnikach gry
+Poniżej znajduję się przykład użycia funkcji `badaj_gre()` z innych pakietów na strategii z naszego pakietu- `strategia_Jana`.
+```{r}
+m = 1000
+#Pakiety:
+#1)SuperFarmerMoc
+Moc <- SuperFarmerMoc::badaj_gre(SuperFarmerMoc::strategia_Jana, ilosc_prob =  m)
+summary(Moc)
+
+#2)SuperFarmerDA
+#SuperFarmerDA::examine.game(SuperFarmerMoc::strategia_Jana, m, die1, die2)
+
+#3)SuperFarmerRCNK
+RCNK <- SuperFarmerRCNK::badaj_gre(gra = SuperFarmerRCNK::gra, strategia = SuperFarmerMoc::strategia_Jana, ile_razy = m)
+
+#4)SuperFarmer.SuperPakiet
+SuperFarmer.SuperPakiet::badaj_gre(SuperFarmerMoc::strategia_Jana)
+
+#5)SuperFarmerADiPR
+SuperFarmerADiPR::badaj_gre(SuperFarmerMoc::strategia_Jana, powtorzen = m)
+
+#6)SuperFarmerAGOJZB
+SuperFarmerAGOJZB::badaj_gre(SuperFarmerMoc::strategia_Jana, ilosc_wywolan = m)
+
+#7)SuperFarmer.SuperDziewczyn
+y <- SuperFarmer.SuperDziewczyn::badaj_gre( SuperFarmerMoc::strategia_Jana)
+summary(y)
+```
+
+
